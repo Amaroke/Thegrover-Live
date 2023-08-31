@@ -1,14 +1,15 @@
 {
-    "functions": {
-      "api/**/*.js": {
-        "runtime": "nodejs16"
-      }
-    },
-    "routes": [
-      {
-        "src": "/isTheGroverLive",
-        "dest": "/api/isTheGroverLive.js"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/isThegroverLive.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/isThegroverLive.js"
+    }
+  ]
+}
