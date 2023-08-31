@@ -1,0 +1,14 @@
+{
+    "functions": {
+      "api/**/*.js": {
+        "runtime": "nodejs16"
+      }
+    },
+    "routes": [
+      {
+        "src": "/isTheGroverLive",
+        "dest": "/api/isTheGroverLive.js"
+      }
+    ]
+  }
+  
