@@ -4,7 +4,7 @@ function checkIfTheGroverIsLive() {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('The Grover est-il en direct ?', data);
+            console.log("Thegrover is live ? " + data.isLive);
             if (data.isLive === true) {
                 chrome.action.setIcon({ path: "images/icon_online.png" });
             } else {
@@ -18,8 +18,7 @@ function checkIfTheGroverIsLive() {
 
 function getThegroverLive() {
     checkIfTheGroverIsLive();
-
-    setInterval(checkIfTheGroverIsLive, 60000);
+    setInterval(checkIfTheGroverIsLive, 120000);
 }
 
 getThegroverLive();
