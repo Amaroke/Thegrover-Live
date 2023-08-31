@@ -18,7 +18,7 @@ function checkIfTheGroverIsLive() {
 function getThegroverLive() {
     checkIfTheGroverIsLive();
 
-    setInterval(checkIfTheGroverIsLive, 5 * 60 * 1000);
+    setInterval(checkIfTheGroverIsLive, 60000);
 }
 
 getThegroverLive();
