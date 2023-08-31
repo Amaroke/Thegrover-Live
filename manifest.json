@@ -4,8 +4,7 @@
     "version": "1.0",
     "description": "Indicateur en direct pour thegrover sur Twitch.",
     "permissions": [
-        "activeTab",
-        "https://api.twitch.tv/*"
+        "https://thegrover-live.vercel.app/*"
     ],
     "background": {
         "service_worker": "background.js"
