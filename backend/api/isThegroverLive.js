@@ -12,7 +12,6 @@ app.use(cors());
 
 app.get('/isThegroverLive', async (req, res) => {
     try {
-        console.log(clientId, clientSecret, channelName)
         const authUrl = `https://id.twitch.tv/oauth2/token?client_id=${clientId}&client_secret=${clientSecret}&grant_type=client_credentials`;
         const authResponse = await fetch(authUrl, { method: 'POST' });
         const authData = await authResponse.json();
@@ -29,8 +28,6 @@ app.get('/isThegroverLive', async (req, res) => {
 
         const streamResponse = await fetch(apiUrl, requestOptions);
         const streamData = await streamResponse.json();
-
-        console.log('streamData :', streamData);
 
         if (streamData.data && streamData.data.length > 0) {
             res.json({ isLive: true });

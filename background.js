@@ -4,10 +4,11 @@ function checkIfTheGroverIsLive() {
     })
         .then(response => response.json())
         .then(data => {
-            if (data === true) {
-                chrome.browserAction.setIcon({ path: "images/icon_online.png" });
+            console.log('The Grover est-il en direct ?', data);
+            if (data.isLive === true) {
+                chrome.action.setIcon({ path: "images/icon_online.png" });
             } else {
-                chrome.browserAction.setIcon({ path: "images/icon_offline.png" });
+                chrome.action.setIcon({ path: "images/icon_offline.png" });
             }
         })
         .catch(error => {
